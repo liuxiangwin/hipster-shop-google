@@ -212,7 +212,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
- template:
+  template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
@@ -479,10 +479,10 @@ spec:
   replicas: 1
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: loadgenerator
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       terminationGracePeriodSeconds: 5
       restartPolicy: Always
@@ -512,8 +512,6 @@ spec:
       app: currencyservice
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: currencyservice
     spec:
@@ -570,8 +568,6 @@ spec:
       app: shippingservice
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: shippingservice
     spec:
@@ -598,9 +594,6 @@ spec:
         livenessProbe:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
-#        env:
-#          - name: JAEGER_SERVICE_ADDR
-#            value: "jaeger-collector:14268"
         resources:
           requests:
             cpu: 100m
@@ -632,8 +625,6 @@ spec:
       app: redis-cart
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: redis-cart
     spec:
@@ -687,8 +678,6 @@ spec:
       app: adservice
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: adservice
     spec:
