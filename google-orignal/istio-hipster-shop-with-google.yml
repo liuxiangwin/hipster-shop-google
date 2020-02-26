@@ -514,6 +514,8 @@ spec:
     metadata:
       labels:
         app: currencyservice
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -570,6 +572,8 @@ spec:
     metadata:
       labels:
         app: shippingservice
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
       - name: server
@@ -627,6 +631,8 @@ spec:
     metadata:
       labels:
         app: redis-cart
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
       - name: redis
@@ -680,6 +686,8 @@ spec:
     metadata:
       labels:
         app: adservice
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       terminationGracePeriodSeconds: 5
       containers:
