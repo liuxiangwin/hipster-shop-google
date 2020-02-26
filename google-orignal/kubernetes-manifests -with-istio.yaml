@@ -218,8 +218,6 @@ spec:
         sidecar.istio.io/inject: "true"
       labels:
         app: frontend
-      annotations:
-        sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       containers:
         - name: server
@@ -485,8 +483,6 @@ spec:
         sidecar.istio.io/inject: "true"
       labels:
         app: loadgenerator
-      annotations:
-        sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       terminationGracePeriodSeconds: 5
       restartPolicy: Always
